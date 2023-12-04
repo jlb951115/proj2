@@ -33,6 +33,17 @@ public class Game {
         // drawn if the same inputs had been given to playWithKeyboard().
 
         TETile[][] finalWorldFrame = null;
+        String s = input.toLowerCase();
+        char first = s.charAt(0);
+        if (first == 'n') {
+            int index = s.indexOf('s');
+            long seed = convert(s.substring(1, index));
+            finalWorldFrame = new World().generate(WIDTH, HEIGHT, seed);
+        }
         return finalWorldFrame;
+    }
+
+    private long convert(String s) {
+        return Long.valueOf(s.toString());
     }
 }
