@@ -104,8 +104,8 @@ public class World {
             p[size] = new Position(x, y - 1);
             size++;
         }
-        for (Position P : p) {
-            if (!T[P.getX()][P.getY()].equals(Tileset.WALL)) {
+        for (int i = 0; i < size; i++) {
+            if (!T[p[i].getX()][p[i].getY()].equals(Tileset.WALL)) {
                 return false;
             }
         }
